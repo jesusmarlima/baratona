@@ -3,7 +3,7 @@ class NavBar extends React.Component {
 render(){
 
     return(
-          <h4>Park Slope Baratona!</h4>
+          <h1>Park Slope Baratona!</h1>
         )
     }
 }
