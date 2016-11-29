@@ -1,3 +1,2 @@
-class Bar
-  attr_accessor :id, :name, :image_url
+class Bar < ApplicationRecord
 end

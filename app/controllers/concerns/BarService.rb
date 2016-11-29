@@ -45,7 +45,7 @@ class BarService
       bar = Bar.new
       bar.name = business.name
       bar.image_url = business.image_url
-      bar.id = business.id
+      bar.yelp_id = business.id
       @bars << bar
     end
   end
