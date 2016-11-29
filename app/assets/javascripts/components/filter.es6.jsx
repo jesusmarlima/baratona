@@ -13,24 +13,17 @@ class Filter extends React.Component{
 
    render(){
         return(
-            <div className="row">
-                <form className="col s12" onSubmit={(event) => this.performSearch(event)}>
-                    <div className="row">
-                        <div className="input-field col s12 m9 l9">
-                            <i className="material-icons prefix">search</i>
-                            <input ref="text_to_seach" id="icon_prefix" type="text" className="validate"/>
-                            <label for="icon_prefix">Search</label>
-                         </div>
-                        <div className="input-field col s12 m9 l3">
-                            <button className="btn waves-effect waves-light" type="submit">Submit
-                                <i className="material-icons right">send</i>
-                            </button>
-                        </div>
-
-                    </div>
-
-                </form>
+          <form onSubmit={(event) => this.performSearch(event)}>
+            <div className="input-field col s12 m10 l10">
+                <input ref="text_to_seach" id="icon_prefix" type="text" className="validate"/>
+                <label htmlFor="icon_prefix">Search</label>
+             </div>
+            <div className="input-field col s12 m2 l2">
+                <button className="btn waves-effect waves-light" type="submit">Submit
+                    <i className="material-icons right">send</i>
+                </button>
             </div>
+          </form>
         )
     }
 }

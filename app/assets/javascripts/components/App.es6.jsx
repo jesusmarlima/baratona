@@ -24,10 +24,13 @@ class App extends React.Component {
         return(
             <div className="container">
                 <NavBar/>
-                <Filter bars = {this.handleBarSearch.bind(this)}/>
-                <BarList bars = {this.state.bars} add_list={this.handleBarIncludeSearch.bind(this)}/>
-                <h3>Selected Bars</h3>
-                <BarList bars = {this.state.selected_bars}/>
+                  <div className="row">
+                    <Filter bars = {this.handleBarSearch.bind(this)}/>
+                  </div>
+                  <div className="row">
+                    <BarList bars = {this.state.bars} add_list={this.handleBarIncludeSearch.bind(this)} title="Bar List"/>
+                      <BarList bars = {this.state.selected_bars} title="Selected Bars"/>
+                  </div>
             </div>
         )
     }
