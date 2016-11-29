@@ -2,13 +2,7 @@ class Bar extends React.Component{
 
   add_to_list(event){
     event.preventDefault()
-    $.ajax({
-      url:'/bars/add' ,
-      method:'post',
-      data: this.props.bar
-    }).done((response) => {
-      this.props.add_list(response)
-    })
+    this.props.add_list(this.props.bar)
   }
 
   render(){
