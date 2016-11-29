@@ -14,9 +14,12 @@ class App extends React.Component {
     })
   }
 
-  handleBarIncludeSearch(selected_bars){
+  handleBarIncludeSearch(bar){
+    if (this.state.selected_bars.includes(bar)){
+        return
+    }
     this.setState({
-      selected_bars: selected_bars
+      selected_bars: [bar].concat(this.state.selected_bars)
     })
   }
 

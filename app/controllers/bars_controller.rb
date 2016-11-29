@@ -9,13 +9,4 @@ class BarsController < ApplicationController
     render json: @bars
   end
 
-  def add
-    @bar = Bar.new
-    @bar.id = params[:id]
-    @bar.name = params[:name]
-    @bar.image_url = params[:image_url]
-    @bars = [@bar]
-    render json: @bars
-  end
-
 end
