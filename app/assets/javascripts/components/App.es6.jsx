@@ -40,16 +40,35 @@ class App extends React.Component {
     })
   }
 
+  new_event(){
+    debugger
+    $.ajax({
+      url:"/events",
+      method:"post",
+      data: {bars:this.state.selected_bars}
+    }).done((response) => {
+      this.setState({
+        selected_bars:[]
+      })
+    } )
+  }
+
   render(){
         return(
-            <div className="container">
-                <NavBar/>
-                  <div className="row">
+            <div>
+                  <div className="row z-depth-2">
                     <Filter bars = {this.handleBarSearch.bind(this)}/>
                   </div>
-                  <div className="row">
+                  <div className="row z-depth-2" >
                     <BarList bars = {this.state.bars} add_list={this.handleBarIncludeSearch.bind(this)} title="Bar List"/>
-                      <BarList bars = {this.state.selected_bars} add_list={this.handleBarExcludeSearch.bind(this)} title="Selected Bars"/>
+                    <BarList bars = {this.state.selected_bars} add_list={this.handleBarExcludeSearch.bind(this)} title="Selected Bars"/>
+                  </div>
+                  <div className="row center">
+                    <div className="input-field col s12 m2 l12 ">
+                        <button onClick={(event) => this.new_event(event)} className="btn waves-effect waves-light" type="submit">Submit
+                            <i className="material-icons right">send</i>
+                        </button>
+                    </div>
                   </div>
             </div>
         )
