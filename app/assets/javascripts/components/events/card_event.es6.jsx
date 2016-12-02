@@ -7,7 +7,7 @@ class CardEvent extends React.Component{
               <span className="card-title">{this.props.event.name}</span>
             </div>
             <div className="card-action">
-              <a href="#">Details</a>
+              <a href={"/events/" + this.props.event.id }>Details</a>
             </div>
           </div>
         </div>

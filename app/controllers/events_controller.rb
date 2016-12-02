@@ -1,9 +1,12 @@
 class EventsController < ApplicationController
 
+  def new
+    
+  end
+
   def create
     bars = []
     params[:bars].each do |k,v|
-      byebug
       if bar = Bar.find_by(yelp_id: v[:yelp_id])
         bars << bar
       else
@@ -26,6 +29,16 @@ class EventsController < ApplicationController
   def user_events
     @user = current_user
     render json: @user.events
+  end
+
+  def show
+    @event = Event.find_by(id: params[:id])
+  end
+
+  def bars
+    @event = Event.find_by(id: params[:event_id])
+    @bars = @event.bars
+    render json: @bars
   end
 
 end
