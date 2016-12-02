@@ -25,7 +25,7 @@ class Profile extends React.Component{
           <div className="col s12 m4 l3">
             <UserInfo user = {this.state.user}/>
           </div>          <div className="col s12 m8 l9">
-            <App />
+            <UserBaratonsList />
           </div>
         </div>
     )

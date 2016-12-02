@@ -8,8 +8,7 @@ class BarList extends React.Component{
               <h4>{this.props.title}</h4>
               <div className="collection">
                     {
-                      bars.map((bar,i)=>
-                        <Bar bar={bar} key={i} add_list={this.props.add_list}/>)
+                      bars.map((bar,i)=><Bar bar={bar} key={i} add_list={this.props.add_list}/>)
                     }
               </div>
             </div>

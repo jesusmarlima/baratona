@@ -1,21 +1,32 @@
 class UserBaratonsList extends React.Component{
+  constructor(){
+    super()
+    this.state = {
+      events:[]
+    }
+  }
+
+  componentDidMount(){
+    $.ajax({
+      url:"/events/user_events",
+      method:'get'
+    }).done((response) => {
+      this.setState({
+          events: response
+        }
+      )
+    })
+  }
+
+
   render(){
+    let events = this.state.events
     return(
-      <div className="row l2"> 
-        <div className="card small">
-          <div className="card-image waves-effect waves-block waves-light">
-            <img className="activator" src="images/office.jpg"/>
-          </div>
-          <div className="card-content">
-            <span className="card-title activator grey-text text-darken-4">Card Title<i className="material-icons right">more_vert</i></span>
-            <p><a href="#">This is a link</a></p>
-          </div>
-          <div className="card-reveal">
-            <span className="card-title grey-text text-darken-4">Card Title<i className="material-icons right">close</i></span>
-            <p>Here is some more information about this product that is only revealed once clicked on.</p>
-          </div>
-        </div>
+      <div>
+          {
+            events.map((event,i) => <CardEvent event={event} key={i} />)
+          }
       </div>
-    )
+      )
   }
 }

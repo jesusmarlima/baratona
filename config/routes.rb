@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resources :bars
   get 'sessions/logout', to: 'sessions#logout'
   get 'sessions/getuser', to: 'sessions#getuser'
-
+  get 'events/user_events', to: 'events#user_events'
 
   resources :events, only:[:create]
   resources :sessions, only:[:new,:create]

@@ -1,4 +1,5 @@
 class EventsController < ApplicationController
+
   def create
     bars = []
     params[:bars].each do |k,v|
@@ -21,4 +22,10 @@ class EventsController < ApplicationController
       render json: [@errors]
     end
   end
+
+  def user_events
+    @user = current_user
+    render json: @user.events
+  end
+
 end
